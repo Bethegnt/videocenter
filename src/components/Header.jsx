@@ -16,6 +16,7 @@ import { BiMenuAltLeft } from 'react-icons/bi';
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Button
@@ -35,34 +36,61 @@ const Header = () => {
 
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
+
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Videocenter</DrawerHeader>
+          <DrawerHeader>VIDEO HUB</DrawerHeader>
           <DrawerBody>
             <VStack alignItems={'flex-start'}>
-              <Button onClick={onClose} variant={'ghost'} colorScheme="purple">
+              <Button
+                onClick={onClose}
+                variant={'ghost'}
+                colorScheme={'purple'}
+              >
                 <Link to={'/'}>Home</Link>
               </Button>
-              <Button onClick={onClose} variant={'ghost'} colorScheme="purple">
+
+              <Button
+                onClick={onClose}
+                variant={'ghost'}
+                colorScheme={'purple'}
+              >
                 <Link to={'/videos'}>Videos</Link>
               </Button>
-              <Button onClick={onClose} variant={'ghost'} colorScheme="purple">
-                <Link to={'/video?category=free'}>Free Videos</Link>
+
+              <Button
+                onClick={onClose}
+                variant={'ghost'}
+                colorScheme={'purple'}
+              >
+                <Link to={'/videos?category=free'}>Free Videos</Link>
               </Button>
-              <Button onClick={onClose} variant={'ghost'} colorScheme="purple">
+
+              <Button
+                onClick={onClose}
+                variant={'ghost'}
+                colorScheme={'purple'}
+              >
                 <Link to={'/upload'}>Upload Video</Link>
               </Button>
             </VStack>
-            <HStack pos={'absolute'} bottom={'10'} left={'10'}>
+
+            <HStack
+              pos={'absolute'}
+              bottom={'10'}
+              left={'0'}
+              w={'full'}
+              justifyContent={'space-evenly'}
+            >
               <Button onClick={onClose} colorScheme={'purple'}>
-                <Link to={'./signin'}>Sign In</Link>
+                <Link to={'/login'}>Log In</Link>
               </Button>
               <Button
                 onClick={onClose}
                 colorScheme={'purple'}
                 variant={'outline'}
               >
-                <Link to={'./signup'}>Sign Up</Link>
+                <Link to={'/signup'}>Sign Up</Link>
               </Button>
             </HStack>
           </DrawerBody>
